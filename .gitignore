@@ -1,0 +1,7 @@
+echo "artifacts/
+data/
+logs/
+__pycache__/
+*.pyc
+.venv/
+" > .gitignore
