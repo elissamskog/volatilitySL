@@ -1,5 +1,5 @@
-echo "artifacts/
-data/
+echo "artifacts/predictions.csv
+data/raw
 logs/
 __pycache__/
 *.pyc
