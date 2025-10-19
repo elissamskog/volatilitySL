@@ -1,0 +1,25 @@
+seed: 1337
+paths:
+  raw: data/raw
+  processed: data/processed
+  artifacts: artifacts
+  figures: reports/figures
+  tables: reports/tables
+horizons: [1, 5, 10, 60]
+splits:
+  window_minutes: 2400
+  step_minutes: 240
+  val_tail_minutes: 240
+block_bootstrap:
+  B: 100
+  block_len: 10
+models:
+  rolling: { L_grid: [5, 10, 30, 60] }
+  har:     { l2: 0.0 }
+  garch:   { dist: "normal" }
+  gbm:
+    n_estimators: 300
+    max_depth: 4
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
