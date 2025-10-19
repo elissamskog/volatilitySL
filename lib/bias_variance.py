@@ -14,7 +14,6 @@ def estimate_bias_variance(predict_fn, Xtest, ytest, refit_fn, n_train, B=100, b
     fbar = preds.mean(0)
     bias2 = float(((fbar - ytest.values)**2).mean())
     var   = float(preds.var(0, ddof=1).mean())
-    # Correct MSE: average squared error over bootstrap reps and test points
     mse   = float(((preds - ytest.values)**2).mean())
     noise = max(mse - bias2 - var, 0.0)
     return {"bias2":bias2, "var":var, "noise":noise, "mse":mse}

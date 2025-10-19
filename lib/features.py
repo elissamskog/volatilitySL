@@ -15,7 +15,6 @@ def make_minute_bars(trade: pd.DataFrame) -> pd.DataFrame:
         df['minute'] = ts.dt.floor('T')
     elif 'seconds_in_bucket' in df.columns:
         base = pd.Timestamp("2000-01-01")
-        # Ensure day and ses are Series so downstream astype() works consistently.
         if 'date_id' in df:
             day = df['date_id'].rank(method='dense').fillna(1) - 1
         else:
